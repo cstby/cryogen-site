@@ -58,6 +58,7 @@ h1 {
 }
 h1.name {
     font-size: 4em;
+    /*margin-auto*/
 }
 h2 {
     font-size: 1.6rem;

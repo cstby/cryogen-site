@@ -356,6 +356,8 @@ header.masthead {
 		margin-bottom: 0px;
 		background: no-repeat center center;
     background-color: #868e96;
+    background-image: url('/img/banner.jpg');
+    background-blend-mode: multiply;
     background-attachment: scroll;
 	  position: relative;
 	  -webkit-background-size: cover;

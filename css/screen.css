@@ -1,0 +1,693 @@
+html {
+    min-height: 100%
+}
+body {
+    --text-color: #2f1e6a;
+    --selection-color: #ccf3f3;
+    --background-color: #ccf3f3;
+    /*font-family: 'Fira Code', monospace;*/
+    font-family: Lora, serif;
+    /*letter-spacing: -0.2px;*/
+    font-size: 14px;
+    /*line-height: 1.5em;*/
+    color: #522959;
+    color: var(--text-color);
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, var(--background-color) 0%, var(--text-color) 90%);
+    /*padding: 32px;*/
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    transition: all .25s;
+}
+::selection { /* WebKit/Blink Browsers */
+    background: #69516d;
+    background: var(--selection-color);
+    color: #fff;
+    opacity: 1;
+}
+::-moz-selection {
+    background: #69516d; /* Gecko Browsers */
+    background: var(--selection-color);
+    color: #fff;
+    opacity: 1;
+}
+h1,h2,h3,h4,h5,h6 {
+    display: table;
+    /*font-family: 'Roboto', 'Helvetica', sans-serif;*/
+    font-family: 'Jost', sans-serif;
+    /*font-weight: 700;*/
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    padding: 0;
+    /* line-height: 1.5em;*/
+    text-align: left;
+    z-index: 10;
+}
+
+h1 {
+		/*text-transform: none;*/
+		font-weight: 700;
+    text-transform: none;
+
+}
+h1.name {
+    font-size: 4em;
+}
+h2 {
+    font-size: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5em;
+}
+h2::after {
+    background-color: var(--background-color);
+    /*bottom: 0;*/
+    top: 0.5em;
+    content: ' ';
+    display: block;
+    height: 50%;
+    left: 15px;
+    opacity: 1;
+    position: absolute;
+    width: calc(100% + 15px);
+    z-index: -1;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+.h-section {
+    font-size: 1.8rem;
+    margin-bottom: 0.8em;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.navbar {
+		border: none;
+}
+
+#nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-family: Jost, sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 15px; /* 4em */
+}
+.blog-name {
+    text-decoration: none;
+    font-family: Jost, sans-serif;
+    position: relative;
+    z-index: 10;
+}
+
+.blog-name span {
+    font-weight: 700;
+}
+.blog-name::after {
+    background-color: var(--background-color);
+    bottom: 0;
+    content: ' ';
+    display: block;
+    height: 50%;
+    opacity:1;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+#content {
+    background-color: #fff;
+    border-radius: 3px;
+		padding: 15px;
+    margin-top: 0em; /* is this needed? */
+    margin-bottom: 0em;
+}
+
+#post-meta {
+    margin-top: -1em;
+    margin-bottom: 1em;
+    color: rgba(0,0,0,0.5)
+}
+
+a,a:active {
+    text-decoration: underline;
+    color: var(--text-color);
+}
+a:hover,a:focus {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    cursor: pointer;
+}
+blockquote {
+    margin: 16px 30px 16px 20px;
+    padding-left: 15px;
+    border-left: 7px solid;
+    border-image: linear-gradient(to bottom, var(--background-color) 0%, var(--text-color) 70%) 1;
+}
+
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    /*background-color: white;*/
+
+    /*padding: 120px 0;*/
+}
+
+main {
+    position: relative;
+    display: block;
+    margin: auto;
+    /*width: 50%;*/
+    max-width: 940px;
+}
+
+#footer {
+    position: relative;
+    display: block;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+#footer p {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+
+section {
+    margin-top: 1em;
+}
+/*
+section:first-of-type {
+    margin-top: 0;
+}*/
+
+#content img {
+    max-width: 100%;
+    padding: 15px;
+    height: auto;
+
+}
+
+.portrait img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    max-height: 350px;
+}
+
+/* intro */
+#intro {
+    /* grid container */
+    position: relative;
+    display: grid;
+    z-index: 10;
+    pointer-events: auto;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 20% 20% 10% 45% 5%;
+    grid-template-rows: 145px 260px;
+    grid-template-areas: "... ... name name name"
+                         "... ... ... bio bio";
+}
+#intro .name {
+    grid-area: name;
+}
+#intro .portrait {
+    display: block;
+    background-image: url(../img/me.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    background-blend-mode: multiply;
+    mix-blend-mode: multiply;
+    /*filter: grayscale(100%);
+    opacity: 0.6;*/
+    grid-column: 1 / 3;
+    width: 375px;
+    height: 375px;
+}
+.bio {
+    /*grid-area: bio;*/
+    margin: 0;
+    margin-top: 2em;
+    justify-self: start;
+}
+
+.vertical-align {
+
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+/* appearances */
+.appearance-list {
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style-type: none;
+    z-index: 10;
+}
+
+.appearance-list li {
+    list-style: none;
+    border: 1px solid var(--text-color);
+    padding: 10px 14px;
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+}
+
+/* projects */
+.project-list {
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style-type: none;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-width: 250px;
+    -moz-column-width: 250px;
+    column-width: 250px;
+    column-gap: 2em;
+    z-index: 10;
+}
+.project-list li {
+    list-style: none;
+    border: 1px solid var(--text-color);
+    position: relative;
+    padding: 10px 14px;
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+    margin: 0 0 2em 0;
+}
+
+#bottom {
+    position: relative;
+    display: grid;
+    pointer-events: auto;
+    justify-content: center;
+    align-content: center;
+    /*grid-template-columns: 45% 10% 45%;
+    grid-template-areas: "work ... other";*/
+
+}
+.work {
+    grid-area: work;
+    display: block;
+}
+.work ul {
+    margin: 0;
+    padding: 0;
+}
+.work ul>li {
+    list-style: none;
+    border: 1px solid var(--text-color);
+    position: relative;
+    padding: 10px 14px;
+    margin: 0 0 2em 0;
+}
+.other {
+    grid-area: other;
+    display: block;
+}
+.other h2 {
+    margin-top: 2em;
+}
+.other h2:first-of-type {
+    margin-top: 0;
+}
+
+.other ul {
+    margin: 0;
+
+}
+
+code {
+    background: #fafafa;
+
+}
+
+header.masthead {
+		margin-bottom: 0px;
+		background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+	  position: relative;
+	  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    left: -15px;
+    width: calc(100% + 30px);
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+header.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: 0.5;
+}
+
+header.masthead .page-heading,
+header.masthead .post-heading,
+header.masthead .site-heading {
+    padding: 120px 15px 120px;
+    color: white;
+}
+
+header.masthead .page-heading,
+header.masthead .site-heading {
+    text-align: center;
+}
+
+header.masthead .page-heading h1,
+header.masthead .site-heading h1 {
+    font-size: 50px;
+    margin-top: 0;
+}
+
+header.masthead .page-heading .subheading,
+header.masthead .site-heading .subheading {
+		font-size: 20px;
+		font-weight: 200;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+    font-family: Poppins, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header.masthead .post-heading h1 {
+    font-size: 35px;
+}
+
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+    line-height: 1.1;
+    display: block;
+}
+
+header.masthead .post-heading .subheading {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 30px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header.masthead .post-heading .meta {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Lora', 'Times New Roman', serif;
+}
+
+header.masthead .post-heading .meta a {
+    color: #fff;
+}
+
+/* Mid Width Media Queries */
+
+@media screen and (min-width: 576px) {
+    #content {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .vertical-align {
+        display: flex;
+        align-items: center;
+    }
+    #footer {
+        display: flex;
+    }
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    header.masthead .site-heading {
+        padding: 200px 0 150px;
+    }
+}
+
+@media (min-width: 992px) {
+    h1.name {
+        font-size: 5em;
+    }
+		#content{
+        /*margin-top: 30px; */
+        padding: 25px 50px;
+    }
+    #nav{
+        /*margin-top: 30px; */
+        margin-bottom: 25px;
+    }
+    header.masthead {
+        left: -50px;
+        width: calc(100% + 100px);
+        margin-bottom: 25px;
+    }
+		header.masthead .page-heading,
+		header.masthead .post-heading,
+		header.masthead .site-heading {
+				padding: 200px 0;
+		}
+		header.masthead .page-heading h1,
+		header.masthead .site-heading h1 {
+				font-size: 80px;
+		}
+		header.masthead .site-heading .subheading {
+				font-size: 24px;
+		}
+
+}
+
+@media screen and (min-width: 1800px) {
+    #intro .portrait {
+        width: 410px;
+        height: 410px;
+    }
+}
+@media screen and (max-width: 1630px) {
+    section {
+        margin-top: 4em;
+    }
+    #intro .portrait {
+        width: 385px;
+        height: 385px;
+    }
+}
+
+/* Max-width Media Queries */
+
+/* @media screen  and (max-width: 1200px) {
+    h1 {
+        font-size: 5em;
+    }
+    #intro {
+        grid-template-rows: 110px;
+    }
+    #intro .portrait {
+        width: 320px;
+        height: 320px;
+    }
+}*/
+
+@media screen and (max-width: 992px) {
+    section {
+        margin-top: 3em;
+    }
+}
+@media screen and (max-width: 768px) {
+    #intro {
+        grid-template-columns: 20% 15% 15% 45% 5%;
+        grid-template-rows: 70px 30px;
+        grid-template-areas: "name name name name name"
+                             "... ... ... ... ..."
+                             "... ... ... bio bio";
+    }
+    #intro .portrait {
+        grid-row: 2 / 4;
+        width: 285px;
+        height: 285px;
+    }
+    #bottom {
+        grid-template-columns: 48% 5% 47%;
+        grid-template-areas: "work ... other";
+    }
+}
+
+@media screen and (max-width: 576px) {
+    section {
+        margin: 1em 0 0 0;
+    }
+    /*h1 {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }*/
+    #intro {
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: "name" "bio";
+    }
+    /*#intro .portrait {
+        display: none; */
+}
+.projects ul {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+}
+.projects ul>li, .work ul>li {
+    margin: 0 0 1em 0;
+}
+#bottom {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "work" "other";
+}
+
+/*
+@media screen and (max-width: 1630px) {
+    main {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 1450px){
+    main {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1050px) {
+    main {
+        width: 80%;
+    }
+    #footer {
+        margin-top: 2em;
+    }
+}
+@media screen and (max-width: 900px) {
+    main {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    body {
+        padding: 16px;
+    }
+}
+
+*/
+
+/**
+ * GitHub Gist Theme
+ * Author : Anthony Attard - https://github.com/AnthonyAttard
+ * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+ */
+
+.hljs {
+    display: block;
+    background: #fafafa;
+    padding: 0.5em;
+    color: #333333;
+    overflow-x: auto;
+}
+
+.hljs-comment,
+.hljs-meta {
+    color: #969896;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+    color: #df5000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+    color: #d73a49;
+}
+
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attribute {
+    color: #0086b3;
+}
+
+.hljs-section,
+.hljs-name {
+    color: #63a35c;
+}
+
+.hljs-tag {
+    color: #333333;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    color: #6f42c1;
+}
+
+.hljs-addition {
+    color: #55a532;
+    background-color: #eaffea;
+}
+
+.hljs-deletion {
+    color: #bd2c00;
+    background-color: #ffecec;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
+
+.hljs-number {
+    color: #005cc5;
+}
+
+.hljs-string {
+    color: #032f62;
+}

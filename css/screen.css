@@ -8,7 +8,7 @@ body {
     /*font-family: 'Fira Code', monospace;*/
     font-family: Lora, serif;
     /*letter-spacing: -0.2px;*/
-    font-size: 14px;
+    /*font-size: 14px;*/
     /*line-height: 1.5em;*/
     color: #522959;
     color: var(--text-color);
@@ -60,7 +60,7 @@ h1.name {
     font-size: 4em;
 }
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     position: relative;
     margin-bottom: 0.5em;
 }
@@ -79,7 +79,7 @@ h2::after {
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
 }
 
 h4 {
@@ -397,11 +397,11 @@ header.masthead .site-heading h1 {
 header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading {
 		font-size: 20px;
-		font-weight: 200;
+		font-weight: 300;
     line-height: 1.1;
     display: block;
     margin: 10px 0 0;
-    font-family: Poppins, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Jost, sans-serif;
 }
 
 header.masthead .post-heading h1 {

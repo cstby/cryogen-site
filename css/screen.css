@@ -75,7 +75,7 @@ h2::after {
     left: 15px;
     opacity: 1;
     position: absolute;
-    width: calc(100% + 15px);
+    width: 100%;
     z-index: -1;
 }
 

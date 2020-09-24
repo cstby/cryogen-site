@@ -382,13 +382,13 @@ header.masthead .overlay {
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
-    padding: 120px 15px 120px;
+    padding: 120px 20px 120px;
     color: white;
 }
 
 header.masthead .page-heading,
 header.masthead .site-heading {
-    text-align: center;
+
 }
 
 header.masthead .page-heading h1,
@@ -454,7 +454,13 @@ header.masthead .post-heading .meta a {
         padding-left: 15px;
     }
     header.masthead .site-heading {
-        padding: 200px 0 150px;
+        padding: 200px 30px 150px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    header.masthead .site-heading {
+        padding: 200px 45px 150px;
     }
 }
 
@@ -464,7 +470,7 @@ header.masthead .post-heading .meta a {
     }
 		#content{
         /*margin-top: 30px; */
-        padding: 25px 50px;
+        padding: 25px 60px;
     }
     #nav{
         /*margin-top: 30px; */
@@ -478,7 +484,7 @@ header.masthead .post-heading .meta a {
 		header.masthead .page-heading,
 		header.masthead .post-heading,
 		header.masthead .site-heading {
-				padding: 200px 0;
+				padding: 200px 60px;
 		}
 		header.masthead .page-heading h1,
 		header.masthead .site-heading h1 {
